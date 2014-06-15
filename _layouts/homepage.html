@@ -18,13 +18,13 @@ layout: pagelayout
 				<div class="col-md-4">
 					<h2>{{ post.title }}</h2>
 					<p>{{ post.content|strip_html|truncatewords: 30 }}</p>
-					<p><a class="btn btn-default" href="{{ posturl }}" role="button">View details &raquo;</a></p>
+					<p><a class="btn btn-default" href="{{ site.baseurl }}{{ posturl }}" role="button">View details &raquo;</a></p>
 				</div>
 			{% elsif forloop.rindex0 > 3 %}
 				<div class="col-md-4">
 					<h2>{{ post.title }}</h2>
 					<p>{{ post.content|strip_html|truncatewords: 30 }}</p>
-					<p><a class="btn btn-default" href="{{ posturl }}" role="button">View details &raquo;</a></p>
+					<p><a class="btn btn-default" href="{{ site.baseurl }}{{ posturl }}" role="button">View details &raquo;</a></p>
 				</div>
 			{% endif %}
 		{% endfor %}

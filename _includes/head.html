@@ -2,12 +2,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="{{ site.description }}">
-<link rel="shortcut icon" href="/img/favicon.png">
+<link rel="shortcut icon" href="./img/favicon.png">
 
 <title>{{ site.name }}</title>
 
 {% for stylesheet in site.styles %}
-	<link href="{{ stylesheet }}" rel="stylesheet">
+	{% assign truncstring = stylesheet|truncate: 5 %}
+	<link href="{% if truncstring contains '//' %}{% else %}{{ site.baseurl }}{%endif%}{{ stylesheet }}" rel="stylesheet">
 {% endfor %}
 
 <!--[if lt IE 9]>

@@ -7,15 +7,16 @@ layout: pagelayout
         <div class="col-lg-8">
             <h1>{{ page.title }}</h1>
 
-            <p class="lead">by <a href="{{ author.site }}">{{ author.name }}</a></p>
+            <p class="lead">by <a href="{{ site.baseurl }}{{ author.site }}">{{ author.name }}</a></p>
 
             <p>Posted on {{ page.date | date: '%d %b %Y at %H:%M' }}</p>
             <hr>
             {% if page.image %}
             	{% include gallery.html %}
 		        <div class="article-image">
-		        	<a href="{{ page.image }}" data-gallery>
-			            <img src="{{ page.image }}" class="img-responsive">
+					{% assign truncstring = page.image|truncate: 5 %}
+		        	<a href="{% if truncstring contains '//' %}{% else %}{{ site.baseurl }}{% endif %}{{ page.image }}" data-gallery>
+			            <img src="{% if truncstring contains '//' %}{% else %}{{ site.baseurl }}{% endif %}{{ page.image }}" class="img-responsive">
 		        	</a>
 				</div>
 				<hr>

@@ -6,7 +6,7 @@
 		</li>
 		{% for page in site.pages %}
 			{% if page.title and page.title != "site.blog.title" %}
-				<a href="{{ page.permalink }}" class="list-group-item">{{ page.title }}</a>
+				<a href="{{ site.baseurl }}{{ page.permalink }}" class="list-group-item">{{ page.title }}</a>
 			{% endif %}
 		{% endfor %}
 		<li class="list-group-item">
@@ -14,7 +14,7 @@
 		</li>
 		{% for post in site.posts %}
 			{% if page.title %}
-				<a href="{{ post.permalink }}" class="list-group-item">{{ post.title }}</a>
+				<a href="{{ site.baseurl }}{{ post.url }}" class="list-group-item">{{ post.title }}</a>
 			{% endif %}
 		{% endfor %}
 	</div>
