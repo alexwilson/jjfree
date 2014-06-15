@@ -23,16 +23,7 @@ layout: pagelayout
         </div>
 
         <div class="col-lg-4">
-        	{% if site.widgets %}
-	        	{% for widget in site.widgets %}
-	        		{% include {{ widget|prepend: 'widgets/'|append: '.html' }} %}
-	        	{% endfor %}
-        	{% endif %}
-            {% if page.widgets %}
-            	{% for widget in page.widgets %}
-            		{% include {{ widget|prepend: 'widgets/'|append: '.html' }} %}
-            	{% endfor %}
-            {% endif %}
+	        {% include widgets/sitemap.html %}
         </div>
     </div>
 </div>

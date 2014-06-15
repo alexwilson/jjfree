@@ -16,6 +16,8 @@ redcarpet:
     ]
 highlighter: false
 
+# Default behaviour in Jekyll 2.0
+relative_permalinks: false
 
 # Navigation menu.
 navmenu: {
@@ -34,15 +36,6 @@ navmenu: {
         'PE': '/about-us/departments/pe/',
     }
 }
-
-# Blog config.
-blog:
-    title: "J Free News."
-    tagline: "Read all about the latest goings-on at our School."
-
-# Widgets/blocks.
-widgets:
-    - sitemap
 
 # Author metadata.
 authors:
