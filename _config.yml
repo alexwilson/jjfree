@@ -21,19 +21,19 @@ relative_permalinks: false
 
 # Navigation menu.
 navmenu: {
-	'News': '/news/',
+	'News': './news/',
     'About us': {
-        'About our school': '/about-us/about-jjfree/',
-        'Gallery': '/about-us/gallery/',
+        'About our school': './about-us/about-jjfree/',
+        'Gallery': './about-us/gallery/',
     },
     'Tools': {
-    	'Tools': '/tools/index.html',
-    	'Report an absence': '/tools/report-absence/',
+    	'Tools': './tools/index.html',
+    	'Report an absence': './tools/report-absence/',
     },
     'Departments': {
-        'Departments': '/about-us/departments/index.html',
-        'Art': '/about-us/departments/art/',
-        'PE': '/about-us/departments/pe/',
+        'Departments': './about-us/departments/index.html',
+        'Art': './about-us/departments/art/',
+        'PE': './about-us/departments/pe/',
     }
 }
 
@@ -45,15 +45,15 @@ authors:
 
 # CSS Stylesheets to be included in the header.
 styles:
-    - "/css/bootstrap.min.css"
-    - "/css/blueimp-gallery.min.css"
-    - "/css/bootstrap-image-gallery.min.css"
-    - "/css/alex.css"
+    - "./css/bootstrap.min.css"
+    - "./css/blueimp-gallery.min.css"
+    - "./css/bootstrap-image-gallery.min.css"
+    - "./css/alex.css"
 
 # Javascript files to be included in the header.
 scripts:
     - "//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"
     - "//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"
-    - "/js/jquery.blueimp-gallery.min.js"
-    - "/js/bootstrap-image-gallery.min.js"
-    - "/js/alex.js"
+    - "./js/jquery.blueimp-gallery.min.js"
+    - "./js/bootstrap-image-gallery.min.js"
+    - "./js/alex.js"
