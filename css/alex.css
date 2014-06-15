@@ -1,0 +1,37 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+footer {
+	margin: 50px 0;
+}
+
+.line-post {
+	width: 100px;
+	height: 100px;
+}
+
+.dateline {
+	font-size: 12px;
+}
+
+.blog-title a, .blog-title a:hover, ul.pagination a, ul.pagination a:hover {
+	color: inherit;
+}
+
+.article-image {
+	overflow: hidden;
+	max-height: 300px;
+}
+
+.article-image img {
+	position: relative;
+	top: 25%;
+	-webkit-transform: translateY(-25%);
+	-ms-transform: translateY(-25%);
+	transform: translateY(-25%);
+	min-width: 100%;
+	height: auto;
+}

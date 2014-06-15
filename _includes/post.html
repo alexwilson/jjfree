@@ -1,0 +1,42 @@
+<div class="row">
+
+	{% if post.image %}
+	    <div class="col-md-2 col-sm-3 text-center">
+	        <a class="story-img" href="{{ post.url }}"><img src="{{ post.image }}" class="img-circle line-post"></a>
+	    </div>
+		{% assign md = 10 %}
+		{% assign sm = 9 %}
+		{% assign xs = 9 %}
+	{% else %}
+		{% assign md = 12 %}
+		{% assign sm = 12 %}
+		{% assign xs = 12 %}
+	{% endif %}
+
+    <div class="col-md-{{ md }} col-sm-{{ sm }}">
+        <div>
+        </div>
+        <h3 class="blog-title">
+        	<span class="dateline pull-right"><time datetime="{{ post.date | date_to_xmlschema }}"><i class="glyphicon glyphicon-time"></i> {{ post.date | date: '%d %b %Y' }}</time></span>
+	        <a href="{{ post.url }}">{{ post.title }}</a>
+        </h3>
+
+        <div class="row">
+            <div class="col-xs-{{ xs }}">
+            	<p>
+                <div class="pull-right">
+                	<br>
+                	<a href="{{ post.url }}" class="btn btn-default btn-large">Read More</a>
+                </div>
+                <div>{{ post.content|strip_html|truncatewords: 40 }}</div>
+            	</p>
+                <div class="pull-left">
+                	{% for tag in post.categories %}
+                		<span class="label label-default">{{ tag }}</span>
+                	{% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>

@@ -1,0 +1,8 @@
+{% for page in site.pages %}
+
+	{% if page.permalink contains currentUrl and page.permalink contains 'club' %}
+	<li>
+		{{ page.title }}
+	</li>
+	{% endif %}
+{% endfor %}

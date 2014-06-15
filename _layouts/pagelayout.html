@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/Article" lang="en">
+	<head>
+		{% include head.html %}
+	</head>
+	<body>
+		{% include navigation.html %}
+		{{ content }}
+		{% include footer.html %}
+		{% for script in site.scripts %}
+			<script src="{{ script }}"></script>
+		{% endfor %}
+	</body>
+</html>

@@ -1,0 +1,67 @@
+---
+title: JJFree News
+layout: page
+---
+
+{% if paginator.total_pages > 1 %}
+	{% for post in paginator.posts %}
+		{% include post.html %}
+	{% endfor %}
+
+  <!--/stories-->
+	<ul class="pagination">
+	{% if paginator.previous_page %}
+		<li>
+			<a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="btn btn-primary pull-left btnPrev">
+				<i class="glyphicon glyphicon-chevron-left"></i> Prev
+			</a>
+		</li>
+	{% else %}
+		<li class="disabled">
+			<a>
+				<i class="glyphicon glyphicon-chevron-left"></i> Prev
+			</a>
+		</li>
+	{% endif %}
+
+	{% for page in (1..paginator.total_pages) %}
+		{% if page == paginator.page %}
+			<li class="active">
+				<a>
+					{{ page }} <span class="sr-only">(current)</span>
+				</a>
+			</li>
+		{% elsif page == 1 %}
+			<li>
+				<a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', '' }}">
+					{{ page }}
+				</a>
+			</li>
+		{% else %}
+			<li>
+				<a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">
+					{{ page }}
+				</a>
+			</li>
+		{% endif %}
+	{% endfor %}
+
+	{% if paginator.next_page %}
+		<li>
+			<a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">
+				Next <i class="glyphicon glyphicon-chevron-right"></i>
+			</a>
+		</li>
+	{% else %}
+		<li class="disabled">
+			<a>
+				Next <i class="glyphicon glyphicon-chevron-right"></i>
+			</a>
+		</li>
+	{% endif %}
+	</ul>
+{% else %}
+	{% for post in site.posts %}
+		{% include post.html %}
+	{% endfor %}
+{% endif %}

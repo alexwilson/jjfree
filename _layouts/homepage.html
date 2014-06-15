@@ -1,0 +1,32 @@
+---
+layout: pagelayout
+---
+
+<div class="jumbotron">
+	<div class="container">
+		{{ page.content }}
+	</div>
+</div>
+
+<div class="container">
+	<h3> News </h3>
+	<hr>
+	<div class="row">
+		{% for post in site.posts %}
+			{% assign posturl = post.url|replace: 'index.html', '' %}
+			{% if site.posts|size < 3 %}
+				<div class="col-md-4">
+					<h2>{{ post.title }}</h2>
+					<p>{{ post.content|strip_html|truncatewords: 30 }}</p>
+					<p><a class="btn btn-default" href="{{ posturl }}" role="button">View details &raquo;</a></p>
+				</div>
+			{% elsif forloop.rindex0 > 3 %}
+				<div class="col-md-4">
+					<h2>{{ post.title }}</h2>
+					<p>{{ post.content|strip_html|truncatewords: 30 }}</p>
+					<p><a class="btn btn-default" href="{{ posturl }}" role="button">View details &raquo;</a></p>
+				</div>
+			{% endif %}
+		{% endfor %}
+	</div>
+</div>

@@ -1,0 +1,21 @@
+<br>
+<div class="well-xs">
+	<div class="list-group">
+		<li class="list-group-item">
+			<h3 class="list-group-item-heading">Sitemap</h3>
+		</li>
+		{% for page in site.pages %}
+			{% if page.title and page.title != "site.blog.title" %}
+				<a href="{{ page.permalink }}" class="list-group-item">{{ page.title }}</a>
+			{% endif %}
+		{% endfor %}
+		<li class="list-group-item">
+			<h4 class="list-group-item-heading">News</h3>
+		</li>
+		{% for post in site.posts %}
+			{% if page.title %}
+				<a href="{{ post.permalink }}" class="list-group-item">{{ post.title }}</a>
+			{% endif %}
+		{% endfor %}
+	</div>
+</div>

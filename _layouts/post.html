@@ -1,0 +1,40 @@
+---
+layout: pagelayout
+---
+{% assign author = site.authors.[page.author] %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8">
+            <h1>{{ page.title }}</h1>
+
+            <p class="lead">by <a href="{{ author.site }}">{{ author.name }}</a></p>
+
+            <p>Posted on {{ page.date | date: '%d %b %Y at %H:%M' }}</p>
+            <hr>
+            {% if page.image %}
+            	{% include gallery.html %}
+		        <div class="article-image">
+		        	<a href="{{ page.image }}" data-gallery>
+			            <img src="{{ page.image }}" class="img-responsive">
+		        	</a>
+				</div>
+				<hr>
+            {% endif %}
+
+            {{ content }}
+        </div>
+
+        <div class="col-lg-4">
+        	{% if site.widgets %}
+	        	{% for widget in site.widgets %}
+	        		{% include {{ widget|prepend: 'widgets/'|append: '.html' }} %}
+	        	{% endfor %}
+        	{% endif %}
+            {% if page.widgets %}
+            	{% for widget in page.widgets %}
+            		{% include {{ widget|prepend: 'widgets/'|append: '.html' }} %}
+            	{% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</div>
