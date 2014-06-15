@@ -19,6 +19,9 @@ highlighter: false
 # Default behaviour in Jekyll 2.0
 relative_permalinks: false
 
+# Github Pages requires a base url. :/  Remember to run Jekyll with the --baseurl option in future.
+baseurl: /jjfree
+
 # Navigation menu.
 navmenu: {
 	'News': '/news/',
@@ -36,6 +39,14 @@ navmenu: {
         'PE': '/about-us/departments/pe/',
     }
 }
+
+# Meta Tags
+tags:
+    - School
+    - Education
+    - Learning
+
+favicon: /img/favicon.ico
 
 # Author metadata.
 authors:
