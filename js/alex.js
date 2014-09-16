@@ -50,7 +50,7 @@ Alex.gallery = {
 	init: function() {
 		this.container = $('#links');
 		if (this.container.length > 0) {
-				this.endpoint = '//api.flickr.com/services/rest/';
+				this.endpoint = 'https://api.flickr.com/services/rest/';
 				this.key = '4934e3b5ba644c29affacd0e104f3482';
 				this.method = 'flickr.interestingness.getList';
 				this.format = 'json';
