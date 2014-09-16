@@ -51,7 +51,7 @@ Alex.gallery = {
 		this.container = $('#links');
 		if (this.container.length > 0) {
 				this.endpoint = '//api.flickr.com/services/rest/';
-				this.key = '7617adae70159d09ba78cfec73c13be3';
+				this.key = '4934e3b5ba644c29affacd0e104f3482';
 				this.method = 'flickr.interestingness.getList';
 				this.format = 'json';
 				this.per_page = 100;
